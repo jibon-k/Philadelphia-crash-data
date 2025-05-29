@@ -1,19 +1,19 @@
-column_name,data_type,description,notes
-crash_id,Int64,Unique identifier for each crash record,Primary key. Check for duplicates.
-year,int32,Year the crash occurred (e.g., 2019),Validate range (e.g., 2000-2023).
-police_district,category,Police district where the crash occurred (numeric code),Consider mapping codes to district names.
-crash_date,datetime64[ns],Date of the crash (YYYY-MM-DD),Ensure no future dates. Extract day_of_week if needed.
-day_name,category,Name of the weekday (e.g., "Wednesday"),Derived from crash_date. Validate consistency.
-primary_street,string,Main street where the crash occurred,Standardize abbreviations (e.g., "Ave" vs. "Avenue").
-age,Float64,Age of the victim (float to handle missing values),Replace NaN with median or use nullable Int32.
-victim_gender,category,Gender of victim ("M", "F"),Check for typos (e.g., "Male" vs. "M").
-collision_type,string,Description of collision (free-text),Extract key terms (e.g., "pedestrian", "DUI") for analysis.
-hit_and_run,bool,Whether the crash was a hit-and-run (1.0=True, 0.0=False),Convert to boolean: .astype(bool).
-primary_vehicle,category,Type of primary vehicle (e.g., "Auto", "M/C"),Group rare categories into "Other".
-secondary_vehicle,category,Type of secondary vehicle/object involved,Handle missing values (empty → "None").
-arrest_made,category,Whether an arrest was made ("Yes", "No"),Convert to boolean if needed.
-investigation_status,string,Status of investigation (e.g., "Pending"),Standardize categories (e.g., "Closed").
-time,object,Time of day (24hr format) as string,Convert to datetime.time if populated.
-latitude,float64,Latitude coordinate of crash location,Validate range (-90 to 90).
-longitude,float64,Longitude coordinate of crash location,Validate range (-180 to 180).
-age_group,category,Age bracket of victim (e.g., "26-35"),Ensure no overlapping ranges.
+column_name,data_type,description
+crash_id,Int64,Unique identifier for each crash record
+year,int32,Year the crash occurred.
+police_district,category,Police district where the crash occurred (numeric code)
+crash_date,datetime64[ns],Date of the crash (YYYY-MM-DD)
+day_name,category,Name of the weekday.
+primary_street,string,Main street where the crash occurred
+age,Float64,Age of the victim (float to handle missing values)
+victim_gender,category,Gender of victim.
+collision_type,string,Description of collision (free-text)
+hit_and_run,bool,Whether the crash was a hit-and-run (1.0=True & 0.0=False)
+primary_vehicle,category,Type of primary vehicle.
+secondary_vehicle,category,Type of secondary vehicle/object involved.
+arrest_made,category,Whether an arrest was made.
+investigation_status,string,Status of investigation.
+time,object,Time of day (24hr format) as string.
+latitude,float64,Latitude coordinate of crash location.
+longitude,float64,Longitude coordinate of crash location.
+age_group,category,Age bracket of victim.
