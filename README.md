@@ -1,5 +1,5 @@
 # Philadelphia Fatal Crash Analysis
-
+📈 **View on Kaggle: [Data Cleaning](https://www.kaggle.com/code/jibonk/philadelphia-fatal-crashes-data-cleaning) , [Basic EDA](https://www.kaggle.com/code/jibonk/philadelphia-crash-data-basic-eda)**
 ## About This Project
 
 This data analysis project examines fatal traffic collisions in Philadelphia from 2019-now, revealing critical patterns in road safety risks. Using Python's data science stack (Pandas, Matplotlib, Seaborn), we uncover:
